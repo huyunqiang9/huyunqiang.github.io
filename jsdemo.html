@@ -43,6 +43,7 @@
 <input id="registerBackListener" type="button" value="注册其他页面回来监听">
 <input id="clearBackListener" type="button" value="清空注册其他页面回来监听">
 <input id="callPhone" type="button" value="拨打电话弹窗">
+<input id="getConnectedInfo" type="button" value="获取WIFI信息">
 <a href="lyf://h5?body={'url':'http://www.laiyifen.com'}"> test下级页面</a>
 
 <hr/>
@@ -381,6 +382,14 @@
         appMessage(getLyfCode);
     }
 
+
+    document.getElementById('getConnectedInfo').onclick= function () {
+        var getLyfCode = {
+            "function": "getConnectedInfo",
+            "callback": "callresult"
+        }
+        appMessage(getLyfCode);
+    }
 
 
 
