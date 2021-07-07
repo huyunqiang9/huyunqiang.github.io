@@ -45,6 +45,7 @@
 <input id="callPhone" type="button" value="拨打电话弹窗">
 <input id="getConnectedInfo" type="button" value="获取WIFI信息">
 <input id="realName" type="button" value="进行实名认证">
+<input id="wxauth" type="button" value="微信授权">
 <a href="lyf://h5?body={'url':'http://www.laiyifen.com'}"> test下级页面</a>
 
 <hr/>
@@ -401,6 +402,13 @@
         appMessage(getLyfCode);
     }
 
+    document.getElementById('wxauth').onclick= function () {
+        var getLyfCode = {
+            "function": "getWechatAuthInfo",
+            "callback": "callresult"
+        }
+        appMessage(getLyfCode);
+    }
 
 
 
