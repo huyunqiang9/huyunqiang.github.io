@@ -46,6 +46,8 @@
 <input id="getConnectedInfo" type="button" value="获取WIFI信息">
 <input id="realName" type="button" value="进行实名认证">
 <input id="wxauth" type="button" value="微信授权">
+<input id="useAppScan" type="button" value="扫码">
+<input id="setMessageInfo" type="button" value="发送短信">
 <a href="lyf://h5?body={'url':'http://www.laiyifen.com'}"> test下级页面</a>
 
 <hr/>
@@ -128,6 +130,27 @@
         };
         appMessage(message);
     }
+
+    document.getElementById('useAppScan').onclick= function () {
+        var message = {
+            'function': 'useAppScan'
+        };
+        appMessage(message);
+    }
+
+    
+    document.getElementById('setMessageInfo').onclick= function () {
+        var message = {
+            'function': 'setMessageInfo',
+            'param': {
+        'number': '18898765432',
+        'desc': '默认信息内容哈'     
+            }
+        };
+        appMessage(message);
+    }
+
+
     document.getElementById('hideTitleBar02').onclick= function () {
         var message = {
             'function': 'hideTitleBar',
