@@ -13,6 +13,7 @@
             margin: 4px;
         }
     </style>
+    <script type="text/javascript" src="//9ws1.t4m.cn/applink.js">  </script>
 </head>
 <body>
 <input id="share" type="button" value="share">
@@ -48,6 +49,7 @@
 <input id="wxauth" type="button" value="微信授权">
 <input id="useAppScan" type="button" value="扫码">
 <input id="setMessageInfo" type="button" value="发送短信">
+<input id="testlink" type="button" value="测试">
 <a href="lyf://h5?body={'url':'http://www.laiyifen.com'}"> test下级页面</a>
 
 <hr/>
@@ -143,10 +145,10 @@
         var message = {
             'function': 'setMessageInfo',
             'param': {
-        'number': '18898765432',
-        'desc': '默认信息内容哈'     
+            'number': '18898765432',
+            'desc': '默认信息内容哈'     
             },
-             'callback': 'callresult'
+            'callback': 'callresult'
         };
         appMessage(message);
     }
@@ -506,6 +508,18 @@
             window.webkit.messageHandlers.mobileAPI.postMessage(obj);
         }
     };
+
+
+    MobLink({
+  el: '#testlink',
+  path: 'lyf/splash',
+  default: true,
+loadDataType:'1',
+  params: {
+      uslPath: 'lyf://otohome'
+  }
+ });
+  
 
     
 
