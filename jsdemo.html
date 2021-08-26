@@ -50,6 +50,7 @@
 <input id="useAppScan" type="button" value="扫码">
 <input id="setMessageInfo" type="button" value="发送短信">
 <input id="testlink" type="button" value="测试deepLink">
+ <input id="getGioBridgeData" type="button" value="获取GIO埋点数据">
 <a href="lyf://h5?body={'url':'http://www.laiyifen.com'}"> test下级页面</a>
 
 <hr/>
@@ -419,6 +420,19 @@
         appMessage(getLyfCode);
     }
 
+    
+     document.getElementById('getGioBridgeData').onclick= function () {
+        var getLyfCode = {
+            "function": "getGioBridgeData",
+            "callback": "callresult"
+        }
+        appMessage(getLyfCode);
+    }
+
+    
+    
+    
+    
 
     document.getElementById('realName').onclick= function () {
         var getLyfCode = {
@@ -508,6 +522,8 @@
             window.webkit.messageHandlers.mobileAPI.postMessage(obj);
         }
     };
+    
+    
 
 
     MobLink({
