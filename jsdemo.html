@@ -136,7 +136,10 @@
 
     document.getElementById('useAppScan').onclick= function () {
         var message = {
-            'function': 'useAppScan'
+            'function': 'useAppScan',
+            'param': {
+                'scanStyle': "0"
+            }
         };
         appMessage(message);
     }
