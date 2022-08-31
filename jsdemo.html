@@ -50,7 +50,8 @@
 <input id="useAppScan" type="button" value="扫码">
 <input id="setMessageInfo" type="button" value="发送短信">
 <input id="testlink" type="button" value="测试deepLink">
- <input id="getGioBridgeData" type="button" value="获取GIO埋点数据">
+<input id="getGioBridgeData" type="button" value="获取GIO埋点数据">
+<input id="addressByMap" type="button" value="地图选址">
 <a href="lyf://h5?body={'url':'http://www.laiyifen.com'}"> test下级页面</a>
 
 <hr/>
@@ -448,6 +449,14 @@
     document.getElementById('wxauth').onclick= function () {
         var getLyfCode = {
             "function": "getWechatAuthInfo",
+            "callback": "callresult"
+        }
+        appMessage(getLyfCode);
+    }
+    
+     document.getElementById('addressByMap').onclick= function () {
+        var getLyfCode = {
+            "function": "addressByMap",
             "callback": "callresult"
         }
         appMessage(getLyfCode);
