@@ -52,6 +52,7 @@
 <input id="testlink" type="button" value="测试deepLink">
 <input id="getGioBridgeData" type="button" value="获取GIO埋点数据">
 <input id="addressByMap" type="button" value="地图选址">
+    <input id="alipay" type="button" value="支付宝支付测试">
 <a href="lyf://h5?body={'url':'http://www.laiyifen.com'}"> test下级页面</a>
 
 <hr/>
@@ -461,6 +462,18 @@
         }
         appMessage(getLyfCode);
     }
+
+     document.getElementById('alipay').onclick= function () {
+        var getLyfCode = {
+            "function": "alipay",
+             "param": {
+                "od": "abc"
+            },
+            "callback": "callresult"
+        }
+        appMessage(getLyfCode);
+    }
+
 
 
 
